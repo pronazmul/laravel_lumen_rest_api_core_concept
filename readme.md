@@ -13,7 +13,7 @@
 * Client-server: Works Between Client & SERVER.
 * Stateless / Rest: Never Store any Data inside API Script.
 * Cacheable: Device Can Store Cache but API not.
-* Uniform interface: Various methods can operate from single URI. 
+* Uniform interface: Various methods can operate from a single URL/Route. 
 
 >## Tools for Start Working: 
 * 	xampp: For Apache & MySQL Support;
