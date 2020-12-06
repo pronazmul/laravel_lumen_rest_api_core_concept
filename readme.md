@@ -11,7 +11,7 @@
 
 >## Properties: 
 * Client-server: Works Between Client & SERVER.
-* Stateless: Never Store any Data inside API Script.
+* Stateless / Rest: Never Store any Data inside API Script.
 * Cacheable: Device Can Store Cache but API not.
 * Uniform interface: Various methods can operate from single URI. 
 
