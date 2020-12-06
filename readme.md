@@ -14,10 +14,10 @@
 * Uniform interface: Various methods can operate from single URI. 
 
 >## Tools for Start Working: 
-* 	xampp: For Apache & MySQL;
+* 	xampp: For Apache & MySQL Support;
 * 	composer: Php Package Manager;
 * 	Sequence: First XAMPP then composer, composer depends on XAMPP php.
-* 	Postman: For API Practice.
+* 	Postman: For Working with various request method, browser only works with get() method.
 
 >## Installation Command: 
 * 	install_command: composer create-project --prefer-dist laravel/lumen blog
