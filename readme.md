@@ -166,18 +166,25 @@ $router->get('/{name}','demoController@method');
 * Process: Parameter(visible), Header(hide), Body_Json.
 <p align="center"><a href="#" ><img src="https://i.ibb.co/VBGLFB5/28-E45-E34-69-FD-4-D58-A223-4-E9762633-FDD.png" width="600"></a></p> 
 
-* Required Class: use Illuminate\Http\Request
-* catch Only Body & Parameter Data:
+### Data Catching Requirments: 
+* Use Rquest Class: use Illuminate\Http\Request
+* Catch Body & Params Data using Request Object.
+* Catch Header Data Using Request Object ->header() method.
+* Practice Data Sending & Catching by Postman. 
+
+
+### Catch Only Body & Parameter Data:
 ```sh
 	public function __invoke(Request $req){
 		return $req;
 		}
 ```
-* Catch Only Header Data:
+### Catch Only Header Data:
 ```sh
 		public function __invoke(Request $req){
-		return $req->header('name');}
-		//Specify Name to get the specified Data.
+		return $req->header('name');
+		}
+		//Specify key to get the Specific key Value.
 ```
 
 
