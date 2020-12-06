@@ -105,15 +105,21 @@ $router->get('/{name}','demoController@method');
 * Body: response($value) Can receive only value.
 * Header: ->header(‘key’, ‘value’) Need Two Parameter.
 
-Syntax:
+### Response In Body:
 ```sh
- 		public function ApiCheck($name){
-		return response($name)
-				->header('name',$name)
-				->header('email','n@gmail.com');
+ 		public function ApiCheck(){
+		return response("Pro Nazmul")
 		}
+		// It's Good Practice to sent response in body using response() method.
 ```
 
+### Response In Header (key & Valude):
+```sh
+ 		public function ApiCheck(){
+		return response('')->header("Name", "Programmer Nazmul Huda");
+		}
+		// Use Key Value Pair in header() method.
+```
 
 >## Json Response: 
 * Body: Json Object array will generate inside body.
