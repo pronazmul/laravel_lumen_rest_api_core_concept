@@ -51,7 +51,7 @@ $route->delete($uri, $callback) | To delete Data
 				
 		//Here Parameter is Optional, If Router can't get use default value Null.
 ```
->## Setup A Controller Before Use: 
+>## Setup Controller Before Use: 
 * Create A New Controller.
 * Extends chield to Parent.
 * Set Namespace.
@@ -66,6 +66,26 @@ $route->delete($uri, $callback) | To delete Data
 	class RestController extends Controller
 	{
 	    //Write Your Logics Here
+	}
+```
+
+>## Pass Parameter From Route To Controller: 
+### Create Router & Sent Value to Controller:
+```php
+$router->get('/{name}','demoController@method');
+```
+### Receive & Use Parameter Data to Conttoller:
+```php 
+	<?php
+
+	namespace App\Http\Controllers;
+	use App\Models\User;
+
+	class demoController extends Controller
+	{
+	    public function method($name){
+	    	return "My Name is $name";
+	    }
 	}
 ```
 
