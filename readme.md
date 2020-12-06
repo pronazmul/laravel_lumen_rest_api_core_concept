@@ -149,17 +149,23 @@ $router->get('/{name}','demoController@method');
 			
 		//When User Hit Route a Method A redirect to route b
 ``` 
->## Download Response: 
-* File Path: Keep File inside index folder;
-Syntax:
-```sh
+### Redirect Response Example: 
+* Firstly Store a File in public Folder.
+* Router Setup:
+```php
+	$router-> get('/download','ApiController@Download');
+```
+```php
 		public function Download(){
-		$path = 'coder.png';
-		return response()->download($path);
+			$path = 'coder.png';
+			return response()->download($path);
 			}
 ```
+
 >## DATA SENDING & CATCHING: 
 * Process: Parameter(visible), Header(hide), Body_Json.
+<p align="center"><a href="#" ><img src="https://i.ibb.co/VBGLFB5/28-E45-E34-69-FD-4-D58-A223-4-E9762633-FDD.png" width="600"></a></p> 
+
 * Required Class: use Illuminate\Http\Request
 * catch Only Body & Parameter Data:
 ```sh
