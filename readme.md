@@ -220,5 +220,5 @@ $payload = [
 
 $jwt = JWT::encode($payload, $key);
 $decoded = JWT::decode($jwt, $key, array('HS256'));
-```
+``` 
 
