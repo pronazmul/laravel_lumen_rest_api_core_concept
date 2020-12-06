@@ -131,18 +131,23 @@ $router->get('/{name}','demoController@method');
 	   // Database Data Always Return as Associative Array.
 ```
 
->## Redirect Response: 
-Set Route: 
-*	$router-> get('/First','ApiController@First');
-*	$router-> get('/Second','ApiController@Second');
-
-Redirect Syntax:
+### Redirect Response Example: 
+* Router Setup:
+```php
+	$router-> get('/a','ApiController@A');
+	$router-> get('/b','ApiController@B');
+```
+* Method Setup: 
 ```sh
-		public function First(){
-			return redirect('/Second');	}
+		public function A(){
+			return redirect('/b');
+			}
 	
-		public function Second(){
-			return "API Developer";	}
+		public function B(){
+			return "I am From Route B";
+			}
+			
+		//When User Hit Route a Method A redirect to route b
 ``` 
 >## Download Response: 
 * File Path: Keep File inside index folder;
