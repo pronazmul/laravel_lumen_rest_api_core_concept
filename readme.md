@@ -106,7 +106,7 @@ $router->get('/{name}','demoController@method');
 * 	Redirect. *
 
 ### Simple String Response In Body:
-```sh
+```php
  		public function ApiCheck(){
 		return response("Pro Nazmul")
 		}
@@ -114,22 +114,20 @@ $router->get('/{name}','demoController@method');
 ```
 
 ### Simple String Response In Header (key & Valude):
-```sh
+```php
  		public function ApiCheck(){
 		return response('')->header("Name", "Programmer Nazmul Huda");
 		}
 		// Use Key Value Pair in header() method.
 ```
 
->## Json Response: 
-* Body: Json Object array will generate inside body.
-* Header: json Response will not work inside header.
-Syntax:
-```sh
-		public function ApiCheck($name){
-		$ associative_array =[‘key’=> ‘value’];
-		return response()->json($associative_array);
-		}
+### JSON Response In Body: 
+```php
+	    public function getRouterData(){
+		$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+		return response->json($age);
+	    }
+	   //If pass Associative Array As Json Response then you will get Json Array Or pass index array, Multidimentional Array get json array. 
 ```
 
 >## Redirect Response: 
