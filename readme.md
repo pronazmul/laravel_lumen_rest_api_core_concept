@@ -32,7 +32,6 @@ Request Method| Action
 $route->get($uri, $callback) | To view Data
 $route->post($uri, $callback) | To insert Data
 $route->put($uri, $callback) | To update Data
-$route->delete($uri, $callback) | To delete Data	
 
 >## Route Parameters (Required & Optional): 
 ### 	Required:
@@ -311,4 +310,7 @@ $payload = [
 $jwt = JWT::encode($payload, $key);
 $decoded = JWT::decode($jwt, $key, array('HS256'));
 ``` 
+>## API Documentation: 
+Why: API documentation improves the developer experience by letting people integrate as quickly as possible with your API and increase user awareness.
+
 
