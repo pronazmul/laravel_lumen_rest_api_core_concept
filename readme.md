@@ -24,6 +24,9 @@
 * 	Development server: php -S localhost:8000 -t public 
 
 >## METHOD OF REST API
+
+Request Method| Action
+------------ | -------------
 $route->get($uri, $callback) | To view Data
 $route->post($uri, $callback) | To insert Data
 $route->put($uri, $callback) | To update Data
