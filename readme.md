@@ -33,7 +33,7 @@ $route->put($uri, $callback) | To update Data
 $route->delete($uri, $callback) | To delete Data	
 
 >## Route Parameters (Required & Optional): 
-## 	Required:
+### 	Required:
 ```php
 		$router->get('/{name}/{age}', function($name,$age){
 		return " My Name is $name & Age is $age";
@@ -41,7 +41,7 @@ $route->delete($uri, $callback) | To delete Data
 		
 		//Here Both Params Are Required, If Router can't get one will generate Error.
 ```
-##	Optional: 
+###	Optional: 
 ```php
 		$router->get('/[{name}]',function($name=null){
 		return " My Name is $name";
