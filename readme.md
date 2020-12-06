@@ -24,10 +24,10 @@
 * 	Development server: php -S localhost:8000 -t public 
 
 >## METHOD OF REST API
-$route->get($uri, $callback)	To view Data
-$route->post($uri, $callback)	To insert Data
-$route->put($uri, $callback)	To update Data
-$route->delete($uri, $callback)	To delete Data
+$route->get($uri, $callback) | To view Data
+$route->post($uri, $callback) | To insert Data
+$route->put($uri, $callback) | To update Data
+$route->delete($uri, $callback) | To delete Data	
 
 >## Route Parameters: 
 * 	Required: $router->get('/{name}/{age}', function($name,$age){});
@@ -168,44 +168,45 @@ $router->get('/',['middleware'=>'auth','uses'=>'AuthControler']);
 *	Why: JWT is a standard process to transfer json data or secure Json Object transmitting system. Encrypt & decrypt json object for security purpose is the main goal of JWT.
 *	Key: Encrypt & decrypt signed with public/private a key.
 *	Uses: 
--	Authentication Purpose.
--	Secure Data Transfer. 
+	-	Authentication Purpose.
+	-	Secure Data Transfer. 
 
 >## JWT Structure 3 part: 
 
-o	Header: 
-•	Algorithm.
-•	Type. 
-o	Payload (Main Data): 
-•	Subject.
-•	Name. 
-•	May be a lot of Properties.
-o	Signature: 
-•	Encryption type or Encoding type.
-o	Token: 
-•	Finally Created a token with a key.
-•	Must have to use that key to decode.
+*	Header: 
+	-	Algorithm.
+	-	Type. 
+*	Payload (Main Data): 
+	-	Subject.
+	-	Name. 
+	-	May be a lot of Properties.
+*	Signature: 
+	-	Encryption type or Encoding type.
+*	Token: 
+	-	Finally Created a token with a key.
+	-	Must have to use that key to decode.
 
 >## JWT Resource: 
 
-o	ENV (Environmental variable): 
-•	SET.env: KEY=value
-•	USE.env: env(‘key’)
-•	Why: Set important constant in.env
-•	Set JWT token key inside.env
-o	Website: 
-•	Website: JWT.io
-•	Version: created by firebase company
-•	Command: composer require firebase/php-jwt
-•	Why: To use JWT Build in functions. 
-•	 "iss" (Issuer)
-•	 "sub" (Subject)
-•	 "aud" (Audience)
-•	 "exp" (Expiration Time)
-•	 "nbf" (Not Before)
-•	 "iat" (Issued At)
-•	 "jti" (JWT ID)
-o	Basic Syntax: 
+*	ENV (Environmental variable): 
+	-	SET.env: KEY=value
+	-	USE.env: env(‘key’)
+	-	Why: Set important constant in.env
+	-	Set JWT token key inside.env
+*	Website: 
+	-	Website: JWT.io
+	-	Version: created by firebase company
+	-	Command: composer require firebase/php-jwt
+	-	Why: To use JWT Build in functions. 
+	-	 "iss" (Issuer)
+	-	 "sub" (Subject)
+	-	 "aud" (Audience)
+	-	 "exp" (Expiration Time)
+	-	 "nbf" (Not Before)
+	-	 "iat" (Issued At)
+	-	 "jti" (JWT ID)
+>##	Basic Syntax: 
+```sh
 use \Firebase\JWT\JWT;
 $key = "example_key";
 $payload = [
@@ -216,5 +217,5 @@ $payload = [
 
 $jwt = JWT::encode($payload, $key);
 $decoded = JWT::decode($jwt, $key, array('HS256'));
-
+```
 
