@@ -174,17 +174,34 @@ $router->get('/{name}','demoController@method');
 
 
 ### Catch Only Body & Parameter Data:
-```sh
-	public function __invoke(Request $req){
-		return $req;
-		}
+```php	
+<?php
+
+	namespace App\Http\Controllers;
+	use Illuminate\Http\Request
+
+	class requestController extends Controller
+	{
+		public function Catch(Request $req){
+			return $req;
+			}
+	}
 ```
 ### Catch Only Header Data:
-```sh
-		public function __invoke(Request $req){
-		return $req->header('name');
+```php
+<?php
+
+	namespace App\Http\Controllers;
+	use Illuminate\Http\Request
+
+	class requestController extends Controller
+	{
+		public function Catch(Request $req){
+			return $req->header('name');
 		}
 		//Specify key to get the Specific key Value.
+	}
+
 ```
 
 
