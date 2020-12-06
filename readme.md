@@ -1,5 +1,5 @@
 <p align="center"><a href="#" ><img src="https://i.ibb.co/KbzvJj4/1-MAnu-Uwghp-P3-X0zoy67-P4m-A.png" width="600"></a></p>  
- <h1 align="center">Laravel | Lumen Rest Api Description</h1> 
+ <h1 align="center">Laravel | Lumen Rest Api</h1> 
 
 >## Definition: 
 
@@ -127,7 +127,8 @@ $router->get('/{name}','demoController@method');
 		$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
 		return response->json($age);
 	    }
-	   //If pass Associative Array As Json Response then you will get Json Array Or pass index array, Multidimentional Array get json array. 
+	   // If pass Associative Array As Json Response then you will get Json Array Or pass index array, Multidimentional Array get json array. 
+	   // Database Data Always Return as Associative Array.
 ```
 
 >## Redirect Response: 
