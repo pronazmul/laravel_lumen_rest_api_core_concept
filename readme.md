@@ -94,6 +94,10 @@ $router->get('/{name}','demoController@method');
 * Param: Single data pass & receive.
 * Body: Average Data pass and receive.
 
+>## Data Response Type: 
+* Header: Only Can Receive Key Value Pair Value, Can not receive Json Object and Other Complex Data.
+* Body: Can Receive Json Object, Json Array & any Other types of response.
+
 >## Response Type: 
 * 	Simple String Response.
 * 	JSON Response. *
@@ -101,11 +105,7 @@ $router->get('/{name}','demoController@method');
 * 	Download. *
 * 	Redirect. *
 
->## Simple String Response: 
-* Body: response($value) Can receive only value.
-* Header: ->header(‘key’, ‘value’) Need Two Parameter.
-
-### Response In Body:
+### Simple String Response In Body:
 ```sh
  		public function ApiCheck(){
 		return response("Pro Nazmul")
@@ -113,7 +113,7 @@ $router->get('/{name}','demoController@method');
 		// It's Good Practice to sent response in body using response() method.
 ```
 
-### Response In Header (key & Valude):
+### Simple String Response In Header (key & Valude):
 ```sh
  		public function ApiCheck(){
 		return response('')->header("Name", "Programmer Nazmul Huda");
