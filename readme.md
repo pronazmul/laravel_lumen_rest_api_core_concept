@@ -43,7 +43,7 @@ $route->delete($uri, $callback) | To delete Data
 ```
 ###	Optional: 
 ```php
-		$router->get('/[{name}]',function($name=null){
+		$router->get('/name[/{name}]',function($name=null){
 		return " My Name is $name";
 		});
 				
