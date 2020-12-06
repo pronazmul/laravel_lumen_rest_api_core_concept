@@ -7,6 +7,8 @@
 * API: Application Programming interface.
 * WHY: To use single database in various platforms IOT (internet of things) Devices. Transfer or use data from one software to another software. 
 
+<p align="center"><a href="#" ><img src="https://i.ibb.co/xqgDfFX/A75-F0359-2-BED-4-B42-A562-12-E5-D044-DF2-F.png" width="350"></a></p> 
+
 >## Properties: 
 * Client-server: Works Between Client & SERVER.
 * Stateless: Never Store any Data inside API Script.
