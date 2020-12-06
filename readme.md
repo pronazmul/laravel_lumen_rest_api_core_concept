@@ -32,7 +32,7 @@ $route->post($uri, $callback) | To insert Data
 $route->put($uri, $callback) | To update Data
 $route->delete($uri, $callback) | To delete Data	
 
->## Route Parameters: 
+>## Route Parameters (Required & Optional): 
 * 	Required: $router->get('/{name}/{age}', function($name,$age){});
 * 	Optional: $router->get('/[{name}]',function($name=null){});
 >## Make Controller Ready: 
