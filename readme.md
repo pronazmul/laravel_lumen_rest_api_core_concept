@@ -51,9 +51,23 @@ $route->delete($uri, $callback) | To delete Data
 				
 		//Here Parameter is Optional, If Router can't get use default value Null.
 ```
->## Make Controller Ready: 
-* Create: Create New Controller.
-* use: use App\User;
+>## Setup A Controller Before Use: 
+* Create A New Controller.
+* Extends chield to Parent.
+* Set Namespace.
+* Use User.php from Models.
+
+```php 
+	<?php
+
+	namespace App\Http\Controllers;
+	use App\Models\User;
+
+	class RestController extends Controller
+	{
+	    //Write Your Logics Here
+	}
+```
 
 >## Response Area: 
 * Header: Confidential Data pass and receive.
