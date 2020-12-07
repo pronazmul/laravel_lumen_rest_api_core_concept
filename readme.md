@@ -289,21 +289,43 @@ $router->get('/{name}','demoController@method');
 <p align="center"><a href="#" ><img src="https://i.ibb.co/F7DsxL7/OAuth-Roles.jpg" width="500"></a></p> 
 
 
->## Lumen Authentication Steps: 
+>## Lumen Basic Authentication Steps: 
 
 *	Uncheck Comment: "Authenticate middleware" &  "AuthServiceProvider" From Bootstrap-> App.php
-*	AuthServiceProvider method boot (): Access token will go inside boot method then method will check that key, if authorized or not value will transfer to middleware/ Authenticate.php
-*	Authenticate method handle () : This method will receive boot() Logic value & declare if the authentication is success allow to go next step or not.
+*	Authentication Overview:
+	- AuthServiceProvider method boot (): Access token will go inside boot method then method will check that key, if authorized or not value will transfer to middleware/ Authenticate.php
+	- Authenticate method handle () : This method will receive boot() Logic value & declare if the authentication is success allow to go next step or not.
 
+### Setup Logic in Auth Service Provider boot():
+```php
+public function boot()
+    {
+        $this->app['auth']->viaRequest('api', function ($request) {
 
-
->##	Authenticate Route Example:
-
-```sh
-$router->get('/',['middleware'=>'auth','uses'=>'AuthControler']);
-	Middleware => ‘auth’ detect authentication success or not.
-	If success, then uses call controller.
+            if ($request->header('api_token') == "123"){
+                return new User();
+            }
+        });
+    }
 ```
+
+### Allow or Disallow user depending authServiceProvider Logic: 
+```php
+    public function handle($request, Closure $next, $guard = null)
+    {
+        if ($this->auth->guard($guard)->guest()) {
+            return response('Unauthorized.', 401);
+        }
+
+        return $next($request);
+    }
+```
+### Authenticate Route Example: 
+```php
+	Basic Route Example: $router->get('/auth', 'authController@authMethod');
+	Authenticate Route Example: $router->get('/auth',['middleware'=>'auth','uses'=>'authController@authMethod']);
+```
+
 >## JWT Authentication: 
 
 *	JWT: JSON WEB TOKEN.
