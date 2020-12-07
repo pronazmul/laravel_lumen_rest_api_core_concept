@@ -281,19 +281,21 @@ $router->get('/{name}','demoController@method');
 ```
 >## Authentication Steps: 
 
-*	Client Server: Sent Request To authentication Server.
-*	Auth Server: Validate then sent access token to client.
+*	Client Server: Sent Request To authentication Server For Access Token.
+*	Auth Server: Check Access Token Validity & Response to Client's Request.
 *	Client Server: Sent Request To resource Server with Access token.
-*	Resource Server: Validate access token to Auth server.
-*	Resource Server: Finally, Response to Client’s Request.
+*	Resource Server: Validate access token to Auth server & Finally Response Client's Request.
+
+<p align="center"><a href="#" ><img src="https://i.ibb.co/F7DsxL7/OAuth-Roles.jpg" width="500"></a></p> 
 
 
+>## Lumen Authentication Steps: 
 
->## Authentication Architecture: 
+*	Uncheck Comment: "Authenticate middleware" &  "AuthServiceProvider" From Bootstrap-> App.php
+*	AuthServiceProvider method boot (): Access token will go inside boot method then method will check that key, if authorized or not value will transfer to middleware/ Authenticate.php
+*	Authenticate method handle () : This method will receive boot() Logic value & declare if the authentication is success allow to go next step or not.
 
-*	Uncommand Bootstrap/App: Authenticate middleware, AuthServiceProvider.
-*	App/Provider/AuthServiceProvider: method boot () {Access token will go inside boot method then method will check that key, if authorized or not value will transfer to middleware/ Authenticate.php}
-*	App/Middleware/Authenticate: method handle () {This method will receive boot() Logic value & declare if the authentication is success allow to go next step (Create App/User.php Class Object) or authentication is false return unauthorized 403. 
+
 
 >##	Authenticate Route Example:
 
