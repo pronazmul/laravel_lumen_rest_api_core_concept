@@ -205,21 +205,70 @@ $router->get('/{name}','demoController@method');
 
 
 
->## Database Operation: 
+>## Database Crud Operation: 
 * Requirement
-	- use Illuminate\Support\Facades\DB
-	- Comment Out: Bootstrap > app [ $app->withFacades() ] //To use Files inside Facades
+	- Create Database & Connected to Laravel .env .
+	- Create Model & Connect with Database Table.
+	- Use Postman to check Api Request & Response.
+	- Create Controller use Model for DB Operation & use Request Class to handle Request/Response. 
+	- Comment Out: Bootstrap > app "$app->withEloquent()" //To use Models inside Eloquent.
+	
+### Router Method Setup	Example
+```php
+<?php
+	/** @var \Laravel\Lumen\Routing\Router $router */
 
->## Receive JSON BODY DATA: 
-* $request: Ensure Only body or param data received.
-* Input(): Slice json object properties & Receive Param data;
-```sh
-function __invoke(Request $request){
-		$name= $request -> input('name');
-		$email= $request -> input('email');
-		$cell= $request -> input('cell');
-		$address= $request -> input('address');
-		}
+	$router->get('/crud','crudController@Select');
+	$router->post('/crud','crudController@Insert');
+	$router->put('/crud','crudController@Update');
+	$router->delete('/crud','crudController@Delete');
+```
+	
+
+
+### Controller Crud Operation Example
+```php
+<?php
+
+	namespace App\Http\Controllers;
+	use Illuminate\Http\Request;
+	use App\Models\userModel;
+
+	class crudController extends Controller
+	{
+	    public function Select(){
+		    $result = userModel::get();
+		    return $result;
+	    }
+
+	    public function Insert(Request $request){
+		    $name = $request->input('name');
+		    $email = $request->input('email');
+		    $mobile = $request->input('mobile');    
+		    $result = userModel::insert(["name"=>$name, "email"=> $email, "mobile"=>$mobile]);
+		    
+		    if($result){return "Data Inserted Successfully";}
+		    else{return "Data Failed To Insert";}
+	    }
+
+
+	    public function Delete(Request $request){
+		    $id = $request->input('id');
+		    $result = userModel::where('id',$id) -> delete();
+		    
+		    if($result){return "Data Deleted Successfully";}
+		    else{return "Data Failed To Delete";}
+	    }
+
+	    public function Update(Request $request){     
+		    $id = $request->input('id');
+		    $name = $request->input('name');
+		    $result= userModel::where('id',$id) -> update(['name' => $name]);
+		    
+		    if($result){return "Data Updated Successfully";}
+		    else{return "Data Failed To Update";}
+	    }
+}
 ```
 
 >## Laravel Lumen Generator: 
