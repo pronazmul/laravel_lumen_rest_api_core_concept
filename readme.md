@@ -389,7 +389,7 @@ $decoded = JWT::decode($jwt, $key, array('HS256'));
 Why: API documentation improves the developer experience by letting people integrate as quickly as possible with your API and increase user awareness.
 
 ### What to Describe: 
-* API Version, Name, Description.
+* API Version, Name, Description. 
 * API End Point/ Methods.
 * Request Parameter/ Header/ Body.
 * Respons Type.
