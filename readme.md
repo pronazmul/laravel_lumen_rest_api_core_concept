@@ -205,9 +205,10 @@ $router->get('/{name}','demoController@method');
 
 
 
->## Database CRUD Operation: 
-* Requirement: use Illuminate\Support\Facades\DB
-* Comment Out: Bootstrap > app [ $app->withFacades() ]
+>## Database Operation: 
+* Requirement
+	- use Illuminate\Support\Facades\DB
+	- Comment Out: Bootstrap > app [ $app->withFacades() ] //To use Files inside Facades
 
 >## Receive JSON BODY DATA: 
 * $request: Ensure Only body or param data received.
