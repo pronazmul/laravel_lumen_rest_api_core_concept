@@ -25,6 +25,14 @@
 * 	install_command: composer create-project --prefer-dist laravel/lumen blog
 * 	Development server: php -S localhost:8000 -t public 
 
+>## Laravel Lumen Generator: 
+* Install: composer require flipbox/lumen-generator
+* Why: To Create Model, Migration, Controller using Command Line. 
+* Configure Lumen Generator Class: Add in Bootstrap/app.php file:
+```sh
+$app->register(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class);
+```
+
 >## METHOD OF REST API
 
 Request Method| Action
@@ -270,17 +278,6 @@ $router->get('/{name}','demoController@method');
 	    }
 }
 ```
-
->## Laravel Lumen Generator: 
-* Install: composer require flipbox/lumen-generator
-* Why: To create files using cmd.
-* Configure: Add in Bootstrap/app.php file:
-```sh
-$app->register(Flipbox\LumenGenerator\
-LumenGeneratorServiceProvider::class);
-Lumen Authentication
-```
-
 >## Authentication Steps: 
 
 *	Client Server: Sent Request To authentication Server.
