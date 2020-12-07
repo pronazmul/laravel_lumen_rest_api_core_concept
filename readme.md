@@ -331,6 +331,7 @@ public function boot()
 *	JWT: JSON WEB TOKEN.
 *	Why: JWT is a standard process to transfer json data or secure Json Object transmitting system. Encrypt & decrypt json object for security purpose is the main goal of JWT.
 *	Key: Encrypt & decrypt signed with public/private a key.
+<p align="center"><a href="#" ><img src="https://i.ibb.co/VwSZw8S/0512-FC6-B-716-A-4205-BD87-CD75486-EA702.png" width="600"></a></p>  
 *	Uses: 
 	-	Authentication Purpose.
 	-	Secure Data Transfer. 
